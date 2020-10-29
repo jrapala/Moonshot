@@ -11,6 +11,8 @@
 		BC27A0F7254A586E0013B6C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC27A0F6254A586E0013B6C7 /* ContentView.swift */; };
 		BC27A0F9254A58700013B6C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC27A0F8254A58700013B6C7 /* Assets.xcassets */; };
 		BC27A0FC254A58700013B6C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC27A0FB254A58700013B6C7 /* Preview Assets.xcassets */; };
+		BC27A105254B82EB0013B6C7 /* astronauts.json in Resources */ = {isa = PBXBuildFile; fileRef = BC27A104254B82EB0013B6C7 /* astronauts.json */; };
+		BC27A108254B82F10013B6C7 /* missions.json in Resources */ = {isa = PBXBuildFile; fileRef = BC27A107254B82F10013B6C7 /* missions.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		BC27A0F8254A58700013B6C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC27A0FB254A58700013B6C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BC27A0FD254A58700013B6C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC27A104254B82EB0013B6C7 /* astronauts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = astronauts.json; sourceTree = "<group>"; };
+		BC27A107254B82F10013B6C7 /* missions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = missions.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,8 @@
 		BC27A0F3254A586E0013B6C7 /* Moonshot */ = {
 			isa = PBXGroup;
 			children = (
+				BC27A104254B82EB0013B6C7 /* astronauts.json */,
+				BC27A107254B82F10013B6C7 /* missions.json */,
 				BC27A0F4254A586E0013B6C7 /* MoonshotApp.swift */,
 				BC27A0F6254A586E0013B6C7 /* ContentView.swift */,
 				BC27A0F8254A58700013B6C7 /* Assets.xcassets */,
@@ -126,7 +132,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC27A105254B82EB0013B6C7 /* astronauts.json in Resources */,
 				BC27A0FC254A58700013B6C7 /* Preview Assets.xcassets in Resources */,
+				BC27A108254B82F10013B6C7 /* missions.json in Resources */,
 				BC27A0F9254A58700013B6C7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
