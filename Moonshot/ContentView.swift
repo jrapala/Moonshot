@@ -15,7 +15,7 @@ struct ContentView: View {
         NavigationView {
             List(missions) { mission in
                 NavigationLink(
-                    destination: Text("Detail View")) {
+                    destination: MissionView(mission: mission, astronauts: astronauts)) {
                     Image(mission.image)
                         .resizable()
                         // If we provide a frame, just use .scaledToFit() shortcut
