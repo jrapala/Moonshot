@@ -52,8 +52,14 @@ struct MissionView: View {
                             VStack(alignment: .leading) {
                                 Text(crewMember.astronaut.name)
                                     .font(.headline)
-                                Text(crewMember.role)
-                                    .foregroundColor(.secondary)
+                                HStack {
+                                    if (crewMember.role == "Commander") {
+                                        Image(systemName: "star.circle.fill")
+                                            .foregroundColor(.yellow)
+                                    }
+                                    Text(crewMember.role)
+                                        .foregroundColor(.secondary)
+                                }
                             }
                             
                             Spacer()
@@ -79,6 +85,6 @@ struct MissionView_Previews: PreviewProvider {
     static let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     
     static var previews: some View {
-        MissionView(mission: missions[0], astronauts: astronauts)
+        MissionView(mission: missions[1], astronauts: astronauts)
     }
 }
