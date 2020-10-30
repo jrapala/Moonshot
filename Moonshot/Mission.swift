@@ -5,6 +5,8 @@
 //  Created by Juliette Rapala on 10/29/20.
 //
 
+import Foundation
+
 // Create a nested struct.
 struct Mission: Codable, Identifiable {
     struct CrewRole: Codable {
@@ -21,8 +23,18 @@ struct Mission: Codable, Identifiable {
     }
     
     let id: Int
-    let launchDate: String?
+    let launchDate: Date?
     let crew: [CrewRole]
     let description: String
+    
+    var formattedLaunchDate: String {
+        if let launchDate = launchDate {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .long
+            return formatter.string(from: launchDate)
+        } else {
+            return "N/A"
+        }
+    }
 }
 
