@@ -17,6 +17,7 @@
 		BC27A110254B83BA0013B6C7 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC27A10F254B83BA0013B6C7 /* Bundle-Decodable.swift */; };
 		BC27A113254B8C650013B6C7 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC27A112254B8C650013B6C7 /* Mission.swift */; };
 		BC27A116254CBB820013B6C7 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC27A115254CBB820013B6C7 /* MissionView.swift */; };
+		BC27A119254CC2290013B6C7 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC27A118254CC2290013B6C7 /* AstronautView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BC27A10F254B83BA0013B6C7 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		BC27A112254B8C650013B6C7 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
 		BC27A115254CBB820013B6C7 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
+		BC27A118254CC2290013B6C7 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				BC27A0FD254A58700013B6C7 /* Info.plist */,
 				BC27A0FA254A58700013B6C7 /* Preview Content */,
 				BC27A115254CBB820013B6C7 /* MissionView.swift */,
+				BC27A118254CC2290013B6C7 /* AstronautView.swift */,
 			);
 			path = Moonshot;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC27A119254CC2290013B6C7 /* AstronautView.swift in Sources */,
 				BC27A10D254B83900013B6C7 /* Astronaut.swift in Sources */,
 				BC27A0F7254A586E0013B6C7 /* ContentView.swift in Sources */,
 				BC27A0F5254A586E0013B6C7 /* MoonshotApp.swift in Sources */,
