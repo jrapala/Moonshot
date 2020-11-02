@@ -10,6 +10,7 @@ import Foundation
 // extend bundle to give it some additional functionality
 extension Bundle {
     // A method generic
+    // Generics let us write code that can use a variety of different types.
     func decode<T: Codable>(_ file: String) -> T {
         guard let url = self.url(forResource: file, withExtension: nil) else {
             fatalError("Failed to locate \(file) in bundle.")
@@ -22,6 +23,7 @@ extension Bundle {
         let decoder = JSONDecoder()
 
         let formatter = DateFormatter()
+        // dateFormat allows us to specify a precise format for our dates
         formatter.dateFormat = "y-MM-dd"
         decoder.dateDecodingStrategy = .formatted(formatter)
         

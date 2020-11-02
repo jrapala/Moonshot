@@ -30,6 +30,7 @@ struct Mission: Codable, Identifiable {
     var formattedLaunchDate: String {
         if let launchDate = launchDate {
             let formatter = DateFormatter()
+            // dateStyle has a selection of built-in formats that match the user's settings.
             formatter.dateStyle = .long
             return formatter.string(from: launchDate)
         } else {
