@@ -10,17 +10,25 @@ import SwiftUI
 struct ContentView: View {
     let astronauts: [Astronaut] = Bundle.main.decode("astronauts.json")
     let missions: [Mission] = Bundle.main.decode("missions.json")
+    @State private var showCrewNames = false
     
     var body: some View {
         NavigationView {
             List(missions) { mission in
                 NavigationLink(
                     destination: MissionView(mission: mission, astronauts: astronauts, allMissions: missions)) {
-                    MissionItem(mission: mission)
+                    MissionItem(mission: mission, showCrewNames: showCrewNames)
                 
                 }
             }
             .navigationTitle("Moonshot")
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.showCrewNames.toggle()
+                }, label: {
+                    Text(self.showCrewNames ? "Show Launch Dates" : "Show Crew Names")
+                })
+            )
         }
     }
 }
@@ -33,6 +41,12 @@ struct ContentView_Previews: PreviewProvider {
 
 struct MissionItem: View {
     let mission: Mission
+    let showCrewNames: Bool
+    
+    init(mission: Mission, showCrewNames: Bool = false) {
+        self.mission = mission
+        self.showCrewNames = showCrewNames
+    }
     
     var body: some View {
         HStack {
@@ -46,8 +60,17 @@ struct MissionItem: View {
             VStack(alignment: .leading) {
                 Text(mission.displayName)
                     .font(.headline)
-                Text(mission.formattedLaunchDate)
+                Text(showCrewNames ? getCrewNames() : mission.formattedLaunchDate)
             }
         }
     }
+    
+    func getCrewNames() -> String {
+        var names = [String]()
+        for member in mission.crew {
+            names.append(member.name.capitalizingFirstLetter())
+        }
+        return names.joined(separator: ", ")
+    }
+
 }
