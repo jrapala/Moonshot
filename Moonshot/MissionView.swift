@@ -11,11 +11,13 @@ struct MissionView: View {
     let mission: Mission
     let astronauts: [CrewMember]
     let allMissions: [Mission]
+    let allAstronauts: [Astronaut]
     
     // Find information about astronauts in crew
     init(mission: Mission, astronauts: [Astronaut], allMissions: [Mission]) {
         self.mission = mission
         self.allMissions = allMissions
+        self.allAstronauts = astronauts
         
         var matches = [CrewMember]()
         
@@ -51,7 +53,7 @@ struct MissionView: View {
                         .padding()
                     
                     ForEach(self.astronauts, id:\.role) { crewMember in
-                        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut, allMissions: allMissions)) {
+                        NavigationLink(destination: AstronautView(astronaut: crewMember.astronaut, allMissions: allMissions, allAstronauts: allAstronauts)) {
                             HStack {
                                 Image(crewMember.astronaut.id)
                                     .resizable()

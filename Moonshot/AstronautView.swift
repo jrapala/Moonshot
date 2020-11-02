@@ -10,11 +10,13 @@ import SwiftUI
 struct AstronautView: View {
     let astronaut: Astronaut
     let allMissions: [Mission]
+    let allAstronauts: [Astronaut]
     let missions: [Mission]
 
     // Find information about astronaut's missions
-    init(astronaut: Astronaut, allMissions: [Mission]) {
+    init(astronaut: Astronaut, allMissions: [Mission], allAstronauts: [Astronaut]) {
         self.allMissions = allMissions
+        self.allAstronauts = allAstronauts
         self.astronaut = astronaut
         
         var matches = [Mission]()
@@ -48,8 +50,11 @@ struct AstronautView: View {
                         .font(.headline)
                  
                     ForEach(self.missions) { mission in
-                        MissionItem(mission: mission)
-                            .padding(.horizontal)
+                        NavigationLink(destination: MissionView(mission: mission, astronauts: allAstronauts, allMissions: allMissions)) {
+                                MissionItem(mission: mission)
+                                    .padding(.horizontal)
+                            }
+                            .buttonStyle(PlainButtonStyle())
                     }
                     
                     Spacer(minLength: 25)
@@ -66,6 +71,6 @@ struct AstronautView_Previews: PreviewProvider {
     static let missions: [Mission] = Bundle.main.decode("missions.json")
     
     static var previews: some View {
-        AstronautView(astronaut: astronauts[0], allMissions: missions)
+        AstronautView(astronaut: astronauts[0], allMissions: missions, allAstronauts: astronauts)
     }
 }
