@@ -15,19 +15,9 @@ struct ContentView: View {
         NavigationView {
             List(missions) { mission in
                 NavigationLink(
-                    destination: MissionView(mission: mission, astronauts: astronauts)) {
-                    Image(mission.image)
-                        .resizable()
-                        // If we provide a frame, just use .scaledToFit() shortcut
-                        // .aspectRatio(contentMode: .fit)
-                        .scaledToFit()
-                        .frame(width: 44, height: 44)
-                    
-                    VStack(alignment: .leading) {
-                        Text(mission.displayName)
-                            .font(.headline)
-                        Text(mission.formattedLaunchDate)
-                    }
+                    destination: MissionView(mission: mission, astronauts: astronauts, allMissions: missions)) {
+                    MissionItem(mission: mission)
+                
                 }
             }
             .navigationTitle("Moonshot")
@@ -38,5 +28,26 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct MissionItem: View {
+    let mission: Mission
+    
+    var body: some View {
+        HStack {
+            Image(mission.image)
+                .resizable()
+                // If we provide a frame, just use .scaledToFit() shortcut
+                // .aspectRatio(contentMode: .fit)
+                .scaledToFit()
+                .frame(width: 44, height: 44)
+            
+            VStack(alignment: .leading) {
+                Text(mission.displayName)
+                    .font(.headline)
+                Text(mission.formattedLaunchDate)
+            }
+        }
     }
 }
