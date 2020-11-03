@@ -8,3 +8,5 @@ An iOS app that lets you explore details about the NASA Apollo missions. Built w
 ![Moonshot Screenshot 02](./docs/moonshot02.png)
 ![Moonshot Screenshot 03](./docs/moonshot03.png)
 ![Moonshot Screenshot 04](./docs/moonshot04.png)
+![Moonshot Gif](./docs/moonshotGif.gif)
+
