@@ -41,6 +41,7 @@ struct MissionView: View {
                         .scaledToFit()
                         .frame(maxWidth: geometry.size.width * 0.7)
                         .padding(.top)
+                        .accessibility(label: Text("\(mission.displayName) badge"))
                 
                     HStack() {
                         Text("Launch Date:")
@@ -48,6 +49,8 @@ struct MissionView: View {
                         Text(self.mission.formattedLaunchDate)
                     }
                     .padding(.top)
+                    .accessibilityElement(children: .ignore)
+                    .accessibility(label: Text("Launch Date: \(mission.formattedLaunchDate)"))
                     
                     Text(self.mission.description)
                         .padding()
